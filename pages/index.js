@@ -19,10 +19,11 @@ export default function Home() {
   const [error, setError] = useState(false);
   const [copied, setIsCopied] = useState(false);
 
-    const handleCopyToClipboard = () => {
-      navigator.clipboard.writeText(shortUrl);
-      setIsCopied(true);
-    };
+  const handleCopyToClipboard = () => {
+    navigator.clipboard.writeText(shortUrl);
+    setIsCopied(true);
+  };
+  
   const handleUrlChange = (event) => {
     setLongUrl(event.target.value.trim());
     setError(!isValidUrl(event.target.value)); // set error if the input value is not a valid URL
@@ -120,7 +121,7 @@ export default function Home() {
                   sx={{
                     position: "absolute",
                     bottom: 1,
-                    right: 33,
+                    right: 43,
                   }}
                 >
                   {copied ? "Copied!" : ""}
