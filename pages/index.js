@@ -30,9 +30,7 @@ export default function Home() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    if (error || !isValidUrl(event.target.value)) {
-      setError(!isValidUrl(event.target.value));
+    if (error || !longurl) {
       return;
     }
     try {
