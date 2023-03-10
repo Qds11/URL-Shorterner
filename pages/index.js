@@ -98,7 +98,11 @@ export default function Home() {
                   position: "relative",
                 }}
               >
-                <a href={shortUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={`http://${shortUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {shortUrl}
                 </a>
 
@@ -121,12 +125,6 @@ export default function Home() {
                 >
                   {copied ? "Copied!" : ""}
                 </Typography>
-
-                {/* <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={handleCopyToClipboard}
-                ></Button> */}
               </CardContent>
             </Card>
           )}

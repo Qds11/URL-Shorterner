@@ -20,7 +20,7 @@ export default async function handler(req, res) {
 
   const query =
     "INSERT INTO url_information (short_url_key, long_url) VALUES (?, ?)";
-  let result= await db.query(query, [key, longurl]);
+  await db.query(query, [key, longurl]);
     db.release();
     res.status(200).json({ shortUrl: `${BASE_URL}/api/${key}` });
 
