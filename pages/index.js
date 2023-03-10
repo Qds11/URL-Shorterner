@@ -45,7 +45,7 @@ export default function Home() {
 
   const isValidUrl = (inputurl) => {
     const regex =
-      /^(https?:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.(com)(\/.*)?$/;
+      /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
     return regex.test(inputurl); //test if input is valid url
   };
 
