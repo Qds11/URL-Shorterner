@@ -10,7 +10,7 @@ Have mysql installed.
 ## Installation/ Running of web app
 1) Download Files
 2) Run ```setup.sql``` in your mysql workbench/ terminal
-3) Change ```.env.development.local``` environment variables if yours differs
+3) Change ```.env.local``` environment variables if yours differs
 4) ```npm i``` in root folder to install node_modules 
 6) ```npm run dev``` in root folder to run app
 7) Open http://localhost:3000 in browser (chrome preferable)
