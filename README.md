@@ -16,13 +16,14 @@ Have mysql installed.
 7) Open http://localhost:3000 in browser (chrome preferable)
 
 ## Web App Flow
-
+Demo Video: https://youtu.be/h8goDlsormQ
 1) Upon loading the web app
 ![image](https://user-images.githubusercontent.com/101784318/224400296-a580a4d6-3989-46c9-8b27-0e38b4d22773.png)
 
 
 2) Short url is generated upon valid url input
-![image](https://user-images.githubusercontent.com/101784318/224402744-94a45ca0-2058-4605-8302-f7b8b445f63a.png)
+![image](https://user-images.githubusercontent.com/101784318/224428186-88a9a657-eefd-4d24-9ebf-76ee75662b13.png)
+
 
 
 3) Url input must be a valid url
