@@ -1,11 +1,13 @@
 import mysql from "mysql2";
 
+const { DB_HOST, DB_USER, DB_NAME } = process.env;
+
 export const pool = mysql
   .createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
+    host: DB_HOST,
+    user: DB_USER,
     password: "",
-    database: process.env.DB_NAME,
+    database: DB_NAME,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,

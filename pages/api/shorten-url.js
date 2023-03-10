@@ -1,9 +1,9 @@
 import crypto from "crypto";
-import { pool } from "../../utils/DBConnection";
+import { pool } from "../../utils/connection";
 
 export default async function handler(req, res) {
-  const { url } = req.body;
-
+  const { longurl } = req.body;
+    const { BASE_URL } = process.env;
   const db = await pool.getConnection();
 
   let key;
@@ -20,7 +20,10 @@ export default async function handler(req, res) {
 
   const query =
     "INSERT INTO url_information (short_url_key, long_url) VALUES (?, ?)";
-  await db.query(query, [key, url]);
-  db.release();
-  res.status(200).json({ key: key });
+  await db.query(query, [key, longurl]);
+    db.release();
+    console.log(BASE_URL)
+    console.log(process.env)
+    res.status(200).json({ shortUrl: `${BASE_URL}/${key}` });
+
 }

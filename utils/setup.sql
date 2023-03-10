@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS URLShorterner;
+DROP DATABASE IF EXISTS urlshortener;
 
-CREATE DATABASE URLShorterner;
-USE URLShorterner;
+CREATE DATABASE urlshortener;
+USE urlshortener;
 
 CREATE TABLE IF NOT EXISTS url_information (
   id INT NOT NULL AUTO_INCREMENT,
