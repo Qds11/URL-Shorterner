@@ -8,10 +8,10 @@ import SendIcon from "@mui/icons-material/Send";
 export default function Home() {
   const [longurl, setLongUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
-  const [error, setError] = useState("false");
+  const [error, setError] = useState(false);
 
   const handleUrlChange = (event) => {
-    setUrl(event.target.value.trim());
+    setLongUrl(event.target.value.trim());
     setError(!isValidUrl(event.target.value)); // set error if the input value is not a valid URL
   };
 
@@ -34,7 +34,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1>URL Shortener</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.content}>
           <TextField
             id="url-input"
             label="URL"
