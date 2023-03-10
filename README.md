@@ -8,7 +8,7 @@ This web app is for an internship assigment which shortens your url input. Do no
 Have mysql installed.
 
 ## Installation/ Running of web app
-1) Download Files
+1) Clone this repository
 2) Run ```setup.sql``` in your mysql workbench/ terminal
 3) Change ```.env.local``` environment variables if yours differs
 4) ```npm i``` in root folder to install node_modules 
