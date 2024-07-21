@@ -1,8 +1,7 @@
 # URL-Shorterner
-Software Engineer : GoWhere Internship Assessment
 
 ## Introduction
-This web app is for an internship assigment which shortens your url input. Do note that if your url is already short, it won't shorten it further.
+This is a URL shorterner web app which shortens your url input. Do note that if your url is already short, it won't shorten it further.
 
 ## Requirement
 Have mysql installed.
