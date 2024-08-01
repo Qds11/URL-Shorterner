@@ -11,6 +11,7 @@ import CardContent from "@mui/material/CardContent";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
+import { validateUrl } from "../utils/url_validation";
 
 export default function Home() {
 
@@ -26,7 +27,7 @@ export default function Home() {
   
   const handleUrlChange = (event) => {
     setLongUrl(event.target.value.trim());
-    setError(!isValidUrl(event.target.value)); // set error if the input value is not a valid URL
+    setError(!validateUrl(event.target.value)); // set error if the input value is not a valid URL
   };
 
   const handleSubmit = async (event) => {
@@ -44,12 +45,6 @@ export default function Home() {
     }
   };
 
-  const isValidUrl = (inputurl) => {
-    const regex =
-      /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
-    return regex.test(inputurl); //test if input is valid url
-  };
-
   return (
     <div>
       <Head>
@@ -64,8 +59,7 @@ export default function Home() {
             padding: 4,
             border: "1px solid black",
             borderRadius: 5,
-          }}
-        >
+          }}>
           <h1>URL Shortener</h1>
           <form onSubmit={handleSubmit} className={styles.content}>
             <TextField
@@ -78,7 +72,11 @@ export default function Home() {
               color="primary"
               onChange={handleUrlChange}
             />
-            <Button variant="outlined" endIcon={<SendIcon />} type="submit">
+            <Button
+              variant="outlined"
+              endIcon={<SendIcon />}
+              type="submit"
+              disabled={error}>
               Shorten
             </Button>
           </form>
@@ -86,10 +84,10 @@ export default function Home() {
             <Card
               sx={{
                 maxWidth: 350,
+                minHeight: 10,
                 backgroundColor: "rgba(255, 255, 255, 0.2)",
                 margin: "auto",
-              }}
-            >
+              }}>
               <CardContent
                 sx={{
                   display: "flex",
@@ -97,21 +95,18 @@ export default function Home() {
                   alignItems: "center",
                   justifyContent: "space-evenly",
                   position: "relative",
-                }}
-              >
+                }}>
                 <a
                   href={`http://${shortUrl}`}
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   {shortUrl}
                 </a>
 
                 <Fab
                   size="small"
                   aria-label="add"
-                  onClick={handleCopyToClipboard}
-                >
+                  onClick={handleCopyToClipboard}>
                   <ContentCopyIcon />
                 </Fab>
                 <Typography
@@ -122,8 +117,7 @@ export default function Home() {
                     position: "absolute",
                     bottom: 1,
                     right: 43,
-                  }}
-                >
+                  }}>
                   {copied ? "Copied!" : ""}
                 </Typography>
               </CardContent>
